@@ -32,24 +32,24 @@ The application will start on http://localhost:8080.
 ### API Endpoints
 !!! IMPORTANT - use your generated UUID in the requests !!!
 
-GET /api/accounts/$UUID$: Retrieve the account details.<br>
-POST /api/accounts: Create a new account.<br>
+GET /api/account/$UUID$: Retrieve the account details.<br>
+POST /api/account/$UUID$: Create a new account.<br>
 GET /api/exchange/$UUID$: Convert an amount from USD to PLN or vice versa.<br>
 
 Example Requests<br>
 Get Account Details<br>
-curl -X GET http://localhost:8080/api/account
+curl -X GET http://localhost:8080/api/account/$UUID$/
 
 Create Account<br>
-curl -X POST http://localhost:8080/api/account \
+curl -X POST http://localhost:8080/api/account/$UUID$/ \
 -H "Content-Type: application/json" \
--d '{"name": "John", "surname": "Doe", "pln-balance": 100}'
+-d '{"firstName": "John", "secondName": "Doe", "plns": 100}'
 
 Exchange Dollars to Pln<br>
-curl -X GET http://localhost:8080/api/exchange?currency=dollars
+curl -X GET http://localhost:8080/api/exchange/$UUID$?currency=dollar
 
 Exchange Pln to Dollars<br>
-curl -X GET http://localhost:8080/api/exchange?currency=plns
+curl -X GET http://localhost:8080/api/exchange/$UUID$?currency=pln
 
 ### Database
 This application uses H2 as an in-memory database, which means that data will not persist after the application is stopped. For development purposes, this setup is quick and efficient.
