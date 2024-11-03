@@ -6,6 +6,7 @@ Welcome to the Nbp-exchange App! This is a simple Spring Boot application that a
 
 - **Exchange Rates**: Fetch current exchange rates for USD to PLN.
 - **Currency Conversion**: Convert amounts between USD and PLN.
+- **Openapi**: Swagger ui documentation.
 - **In-memory Database**: Utilizes H2 for lightweight data storage.
 - **RESTful API**: Interact with the application via a RESTful API.
 
@@ -30,10 +31,12 @@ mvn spring-boot:run
 The application will start on http://localhost:8080.
 
 ### API Endpoints
+Check Swagger Doc - http://localhost:8080/swagger-ui/index.html
+
 !!! IMPORTANT - use your generated UUID in the requests !!!
 
 GET /api/account/$UUID$: Retrieve the account details.<br>
-POST /api/account/$UUID$: Create a new account.<br>
+POST /api/account: Create a new account.<br>
 GET /api/exchange/$UUID$: Convert an amount from USD to PLN or vice versa.<br>
 
 Example Requests<br>
@@ -43,7 +46,7 @@ curl -X GET http://localhost:8080/api/account/$UUID$/
 Create Account<br>
 curl -X POST http://localhost:8080/api/account/$UUID$/ \
 -H "Content-Type: application/json" \
--d '{"firstName": "John", "secondName": "Doe", "plns": 100}'
+-d '{"firstName": "John", "secondName": "Doe", "plns": 999,99}'
 
 Exchange Dollars to Pln<br>
 curl -X GET http://localhost:8080/api/exchange/$UUID$?currency=dollar
@@ -61,4 +64,5 @@ mvn test
 ## Acknowledgments
 Spring Boot - Framework for building web applications<br>
 H2 Database - Lightweight in-memory database<br>
-Maven - Build automation tool for Java
+Maven - Build automation tool for Java<br>
+Openapi - Documentation allows manual testing

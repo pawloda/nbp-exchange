@@ -2,6 +2,7 @@ package com.exchange_app.account;
 
 import org.springframework.stereotype.Service;
 
+import javax.security.auth.login.AccountNotFoundException;
 import java.util.UUID;
 
 import static com.exchange_app.account.AccountMapper.MAPPER;
@@ -19,11 +20,9 @@ class AccountService {
         return repository.save(entity).getId();
     }
 
-    Account getAccount(UUID id) {
-        var optional = repository.findById(id);
-        if (optional.isEmpty()) {
-            throw new RuntimeException("There is no account with id: " + id);
-        }
-        return MAPPER.entityToAccount(optional.get());
+    Account getAccount(UUID id) throws AccountNotFoundException {
+        var entity = repository.findById(id)
+                .orElseThrow(() -> new AccountNotFoundException("Account with ID " + id + " not found"));
+        return MAPPER.entityToAccount(entity);
     }
 }

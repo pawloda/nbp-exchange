@@ -2,13 +2,15 @@ package com.exchange_app.account;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.security.auth.login.AccountNotFoundException;
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/account")
-@Tag(name = "test")
+@Tag(name = "Account API")
 class AccountController {
     private final AccountHandler handler;
 
@@ -17,12 +19,12 @@ class AccountController {
     }
 
     @PostMapping
-    UUID createAccount(@Valid @RequestBody CreateAccountDto dto) {
-        return handler.createAccount(dto);
+    ResponseEntity<UUID> createAccount(@Valid @RequestBody CreateAccountDto dto) {
+        return ResponseEntity.ok(handler.createAccount(dto));
     }
 
     @GetMapping("/{id}")
-    ReadAccountDto getAccount(@PathVariable UUID id) {
-        return handler.getAccount(id);
+    ResponseEntity<ReadAccountDto> getAccount(@PathVariable UUID id) throws AccountNotFoundException {
+        return ResponseEntity.ok(handler.getAccount(id));
     }
 }
