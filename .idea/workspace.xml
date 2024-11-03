@@ -5,30 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d370772-d2db-4298-b242-6097784f458a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_annotations_jakarta_2_2_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_starter_common_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_starter_webmvc_api_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_starter_webmvc_ui_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/advice/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_github_classgraph_classgraph_4_8_149.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_annotations_2_2_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_core_jakarta_2_2_22.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_core_2_2_8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_models_jakarta_2_2_22.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_core_v3_swagger_models_2_2_8.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_common_1_6_15.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_ui_1_6_15.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springdoc_springdoc_openapi_webmvc_core_1_6_15.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_swagger_ui_4_17_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_swagger_ui_5_17_14.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_webjars_locator_core_0_58.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/nbp-exchange.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/nbp-exchange.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/AccountNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/ReadAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/ReadAccountDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/CreateAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/CreateAccountDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/account/ReadAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/ReadAccountDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/advice/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/configuration/OpenApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/configurations/OpenApiConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +68,8 @@
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -94,8 +86,8 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
-      <command value="mvn install" />
       <command value="mvn clean install" />
+      <command value="mvn install" />
     </option>
   </component>
   <component name="RunManager">
@@ -115,7 +107,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730576455780</updated>
-      <workItem from="1730576458979" duration="17452000" />
+      <workItem from="1730576458979" duration="22473000" />
     </task>
     <servers />
   </component>
@@ -132,5 +124,31 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountHandler.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

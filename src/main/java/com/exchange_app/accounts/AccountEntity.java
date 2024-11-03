@@ -1,4 +1,4 @@
-package com.exchange_app.account;
+package com.exchange_app.accounts;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

@@ -1,4 +1,4 @@
-package com.exchange_app.account;
+package com.exchange_app.accounts;
 
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 

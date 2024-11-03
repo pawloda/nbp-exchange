@@ -1,11 +1,10 @@
-package com.exchange_app.account;
+package com.exchange_app.accounts;
 
 import org.springframework.stereotype.Component;
 
-import javax.security.auth.login.AccountNotFoundException;
 import java.util.UUID;
 
-import static com.exchange_app.account.AccountMapper.MAPPER;
+import static com.exchange_app.accounts.AccountMapper.MAPPER;
 
 @Component
 class AccountHandler {
@@ -16,10 +15,11 @@ class AccountHandler {
     }
 
     UUID createAccount(CreateAccountDto dto) {
-        return service.createAccount(MAPPER.createDtoToAccount(dto));
+        var account = MAPPER.createDtoToAccount(dto);
+        return service.createAccount(account);
     }
 
-    ReadAccountDto getAccount(UUID id) throws AccountNotFoundException {
+    ReadAccountDto getAccount(UUID id) {
         return MAPPER.accountToReadDto(service.getAccount(id));
     }
 }
