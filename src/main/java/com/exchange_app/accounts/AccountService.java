@@ -14,6 +14,7 @@ class AccountService {
     }
 
     UUID createAccount(Account account) {
+        account.setDollars(0.0F);
         var entity = AccountMapper.MAPPER.accountToEntity(account);
         return repository.save(entity).getId();
     }

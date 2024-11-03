@@ -1,18 +1,22 @@
 package com.exchange_app.accounts;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.Getter;
+import lombok.Setter;
 
 @Schema(description = "Read account dto")
+@Getter
+@Setter
 class ReadAccountDto {
     @Schema(example = "John")
-    public String firstName;
+    private String firstName;
 
     @Schema(example = "Doe")
-    public String secondName;
+    private String secondName;
 
     @Schema(example = "999.99")
-    public Float plns;
+    private Float plns;
 
     @Schema(example = "999.99")
-    public Float dollars;
+    private Float dollars;
 }

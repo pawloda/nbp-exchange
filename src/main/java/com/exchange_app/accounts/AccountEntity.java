@@ -20,8 +20,4 @@ class AccountEntity {
     private String secondName;
     private Float plns;
     private Float dollars;
-
-    UUID getId() {
-        return id;
-    }
 }

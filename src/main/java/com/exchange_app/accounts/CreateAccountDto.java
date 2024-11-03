@@ -12,13 +12,13 @@ import lombok.Setter;
 class CreateAccountDto {
     @Schema(example = "John")
     @Size(min = 1, message = "The size must be greater than 1!")
-    public String firstName;
+    private String firstName;
 
     @Schema(example = "Doe")
     @Size(min = 1, message = "The size must be greater than 1!")
-    public String secondName;
+    private String secondName;
 
     @Schema(example = "999.99")
     @Min(value = 1, message = "The balance must be greater than 1.00")
-    public Float plns;
+    private Float plns;
 }
