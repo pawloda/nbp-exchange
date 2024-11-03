@@ -11,6 +11,6 @@ class Account {
     private UUID id;
     private String firstName;
     private String secondName;
-    private Float plns;
-    private Float dollars;
+    private Double pln;
+    private Double usd;
 }

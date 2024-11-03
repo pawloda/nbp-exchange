@@ -37,22 +37,7 @@ Check Swagger Doc - http://localhost:8080/swagger-ui/index.html
 
 GET /api/account/$UUID$: Retrieve the account details.<br>
 POST /api/account: Create a new account.<br>
-GET /api/exchange/$UUID$: Convert an amount from USD to PLN or vice versa.<br>
-
-Example Requests<br>
-Get Account Details<br>
-curl -X GET http://localhost:8080/api/account/$UUID$/
-
-Create Account<br>
-curl -X POST http://localhost:8080/api/account/$UUID$/ \
--H "Content-Type: application/json" \
--d '{"firstName": "John", "secondName": "Doe", "plns": 999,99}'
-
-Exchange Dollars to Pln<br>
-curl -X GET http://localhost:8080/api/exchange/$UUID$?currency=dollar
-
-Exchange Pln to Dollars<br>
-curl -X GET http://localhost:8080/api/exchange/$UUID$?currency=pln
+GET /api/exchange/$UUID$?currency=$CUR$&sum=$SUM$: Convert an amount from USD to PLN or vice versa.<br>
 
 ### Database
 This application uses H2 as an in-memory database, which means that data will not persist after the application is stopped. For development purposes, this setup is quick and efficient.

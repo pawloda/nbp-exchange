@@ -7,6 +7,8 @@ import java.util.UUID;
 
 @Service
 class AccountService {
+    private static final double INITIAL_USD_VALUE = 0.0d;
+
     private final AccountRepository repository;
 
     AccountService(final AccountRepository repository) {
@@ -14,7 +16,7 @@ class AccountService {
     }
 
     UUID createAccount(Account account) {
-        account.setDollars(0.0F);
+        account.setUsd(INITIAL_USD_VALUE);
         var entity = AccountMapper.MAPPER.accountToEntity(account);
         return repository.save(entity).getId();
     }

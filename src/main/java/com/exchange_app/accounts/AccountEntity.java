@@ -18,6 +18,6 @@ class AccountEntity {
     private UUID id;
     private String firstName;
     private String secondName;
-    private Float plns;
-    private Float dollars;
+    private Double plns;
+    private Double dollars;
 }

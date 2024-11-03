@@ -20,5 +20,5 @@ class CreateAccountDto {
 
     @Schema(example = "999.99")
     @Min(value = 1, message = "The balance must be greater than 1.00")
-    private Float plns;
+    private Double pln;
 }

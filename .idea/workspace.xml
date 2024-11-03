@@ -5,17 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d370772-d2db-4298-b242-6097784f458a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_mapstruct_binding_1_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_34.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_36.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/Currency.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_5_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_4_12.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_2_0_16.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/nbp-exchange.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/nbp-exchange.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/CreateAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/CreateAccountDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/ReadAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/ReadAccountDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +34,7 @@
         <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -104,7 +111,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730576455780</updated>
-      <workItem from="1730576458979" duration="27114000" />
+      <workItem from="1730576458979" duration="29546000" />
     </task>
     <servers />
   </component>
@@ -132,12 +139,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java</url>
-          <line>17</line>
+          <line>19</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java</url>
-          <line>16</line>
+          <line>18</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>

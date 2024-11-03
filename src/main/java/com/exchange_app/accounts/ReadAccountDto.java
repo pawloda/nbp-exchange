@@ -15,8 +15,8 @@ class ReadAccountDto {
     private String secondName;
 
     @Schema(example = "999.99")
-    private Float plns;
+    private Double pln;
 
     @Schema(example = "999.99")
-    private Float dollars;
+    private Double usd;
 }
