@@ -5,23 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d370772-d2db-4298-b242-6097784f458a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_36.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/Currency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_5_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_4_12.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_2_0_16.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/nbp-exchange.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/nbp-exchange.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/commons/CurrencyPairValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/configurations/RestTemplateConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/ExceptionFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/NotEnoughMoneyException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/GetCourse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/CreateAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/CreateAccountDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/ReadAccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/ReadAccountDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +30,8 @@
       <list>
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -80,9 +77,11 @@
       <recent name="com.exchange_app.account" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.exchange_app.accounts" />
       <recent name="com.exchange_app" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.exchange_app.exceptions" />
       <recent name="com.exchange_app.exchanges" />
       <recent name="com.exchange_app.account" />
       <recent name="com.exchange_app" />
@@ -111,7 +110,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730576455780</updated>
-      <workItem from="1730576458979" duration="29546000" />
+      <workItem from="1730576458979" duration="43040000" />
     </task>
     <servers />
   </component>
@@ -132,20 +131,30 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/target/generated-sources/annotations/com/exchange_app/accounts/AccountMapperImpl.java</url>
           <line>50</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="16" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeService.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java</url>
-          <line>18</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepositoryImpl.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/GetCourse.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/GetCourse.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="51" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

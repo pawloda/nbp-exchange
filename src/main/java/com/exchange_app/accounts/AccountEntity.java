@@ -11,13 +11,13 @@ import java.util.UUID;
 
 @Getter
 @Setter
-@Entity
+@Entity(name = "Account")
 class AccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String firstName;
     private String secondName;
-    private Double plns;
-    private Double dollars;
+    private Double pln;
+    private Double usd;
 }

@@ -1,9 +1,11 @@
 package com.exchange_app.accounts;
 
-import com.exchange_app.exceptions.AccountNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
+
+import static com.exchange_app.commons.CurrencyPairValidator.validateIfInitValueIsPositive;
+import static com.exchange_app.exceptions.ExceptionFactory.throwAccountNotFoundException;
 
 @Service
 class AccountService {
@@ -16,6 +18,7 @@ class AccountService {
     }
 
     UUID createAccount(Account account) {
+        validateIfInitValueIsPositive(account.getPln());
         account.setUsd(INITIAL_USD_VALUE);
         var entity = AccountMapper.MAPPER.accountToEntity(account);
         return repository.save(entity).getId();
@@ -23,7 +26,7 @@ class AccountService {
 
     Account getAccount(UUID id) {
         var entity = repository.findById(id)
-                .orElseThrow(() -> new AccountNotFoundException("Account with ID " + id + " not found"));
+                .orElseThrow(() -> throwAccountNotFoundException(id));
         return AccountMapper.MAPPER.entityToAccount(entity);
     }
 }

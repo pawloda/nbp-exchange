@@ -1,5 +1,6 @@
 package com.exchange_app.exchanges;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -16,8 +17,8 @@ class ExchangeHandler {
         this.service = service;
     }
 
-    void exchange(UUID id, String cuurency, String sum) {
+    void exchange(UUID id, String currencyToExchange, String sum) throws JsonProcessingException {
         LOGGER.info("Exchange request has been received for client with id: {}", id);
-        service.exchange(id, Currency.valueOf(cuurency), Double.valueOf(sum));
+        service.exchange(id, Currency.valueOf(currencyToExchange.toUpperCase()), Double.valueOf(sum));
     }
 }

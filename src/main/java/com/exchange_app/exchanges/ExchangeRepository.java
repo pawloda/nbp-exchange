@@ -1,12 +1,11 @@
 package com.exchange_app.exchanges;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.data.util.Pair;
 
 import java.util.UUID;
 
-@Repository
-class ExchangeRepository {
-    void updateBalance(UUID id, Currency currency, Double usd, Double pln) {
+interface ExchangeRepository {
+    Pair<Double, Double> findPlnAndUsdById(UUID id);
 
-    }
+    void updateBalance(UUID id, Double usd, Double pln);
 }
