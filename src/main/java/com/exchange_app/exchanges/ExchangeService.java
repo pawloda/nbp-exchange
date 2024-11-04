@@ -11,10 +11,10 @@ import static com.exchange_app.commons.CurrencyPairValidator.validateIfAccountBa
 
 @Service
 class ExchangeService {
-    private final ExchangeRepositoryImpl repository;
+    private final ExchangeRepository repository;
     private final GetCourse getCourse;
 
-    ExchangeService(final ExchangeRepositoryImpl repository, final GetCourse getCourse) {
+    ExchangeService(final ExchangeRepository repository, final GetCourse getCourse) {
         this.getCourse = getCourse;
         this.repository = repository;
     }
