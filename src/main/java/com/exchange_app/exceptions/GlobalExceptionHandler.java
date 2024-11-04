@@ -34,7 +34,7 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(exception.getMessage());
     }
 
-    @ExceptionHandler(AccountNotFoundException.class)
+    @ExceptionHandler(NotEnoughMoneyException.class)
     public ResponseEntity<String> handleNotEnoughMoney(NotEnoughMoneyException exception) {
         LOGGER.error(exception.toString());
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exception.getMessage());
