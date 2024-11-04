@@ -22,7 +22,7 @@ class ExchangeService {
     //I could use strategy here, so I wanted to implement request once for both - but it could be next step (taking
     // values for 2 currencies and then for every pair implement a class calculateFor1curr2curr)
     void exchange(UUID id, Currency currencyToExchange, Double sum) throws JsonProcessingException {
-        Pair<Double, Double> plnAndUsd = repository.findPlnAndUsdById(id);
+        var plnAndUsd = repository.findPlnAndUsdById(id);
         validateIfAccountBalanceExists(id, plnAndUsd);
         if(currencyToExchange == Currency.PLN) {
             plnAndUsd = calculateForPlnExchange(plnAndUsd, sum);

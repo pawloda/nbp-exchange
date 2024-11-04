@@ -12,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.Optional;
 import java.util.UUID;
 
+import static com.exchange_app.accounts.AccountMapper.MAPPER;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.mockito.ArgumentMatchers.any;
@@ -59,6 +60,9 @@ public class AccountServiceTest {
 
     @Test
     void whenCreateAccountDataShouldReturnUUIDTest() {
+        //given:
+        given(repository.save(any(AccountEntity.class))).willReturn(MAPPER.accountToEntity(ACCOUNT));
+
         //when
         var result = service.createAccount(ACCOUNT);
 
