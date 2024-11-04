@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d370772-d2db-4298-b242-6097784f458a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/commons/CurrencyPairValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/configurations/RestTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/ExceptionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/NotEnoughMoneyException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/GetCourse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/exchange_app/accounts/AccountServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/nbp-exchange.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/nbp-exchange.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/commons/CurrencyPairValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/commons/CurrencyPairValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/ExceptionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exceptions/ExceptionFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/exchange_app/ExchangeAppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/exchange_app/ExchangeAppApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,8 +69,8 @@
       <recent name="com.exchange_app.account" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.exchange_app.accounts" />
       <recent name="com.exchange_app" />
+      <recent name="com.exchange_app.accounts" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.exchange_app.exceptions" />
@@ -89,11 +81,92 @@
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn test" />
+      <command value="mvn clean" />
       <command value="mvn install" />
+      <command value="mvn clean test" />
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.AccountServiceTest.whenCreateAccountNoDataShouldThrowExceptionTest">
+    <configuration name="AccountServiceTest.whenCreateAccountNoDataShouldThrowExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nbp-exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exchange_app.accounts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exchange_app.accounts" />
+      <option name="MAIN_CLASS_NAME" value="com.exchange_app.accounts.AccountServiceTest" />
+      <option name="METHOD_NAME" value="whenCreateAccountNoDataShouldThrowExceptionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountServiceTest.whenGetAccountNoDataShouldThrowExceptionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nbp-exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exchange_app.accounts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exchange_app.accounts" />
+      <option name="MAIN_CLASS_NAME" value="com.exchange_app.accounts.AccountServiceTest" />
+      <option name="METHOD_NAME" value="whenGetAccountNoDataShouldThrowExceptionTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExchangeAppApplicationSpec" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nbp-exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exchange_app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exchange_app" />
+      <option name="MAIN_CLASS_NAME" value="com.exchange_app.ExchangeAppApplicationSpec" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExchangeAppApplicationSpec.should load the context" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nbp-exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exchange_app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exchange_app" />
+      <option name="MAIN_CLASS_NAME" value="com.exchange_app.ExchangeAppApplicationSpec" />
+      <option name="METHOD_NAME" value="should load the context" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExchangeAppApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="nbp-exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.exchange_app.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.exchange_app" />
+      <option name="MAIN_CLASS_NAME" value="com.exchange_app.ExchangeAppApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ExchangeAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="nbp-exchange" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.exchange_app.ExchangeAppApplication" />
@@ -101,6 +174,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AccountServiceTest.whenCreateAccountNoDataShouldThrowExceptionTest" />
+        <item itemvalue="JUnit.AccountServiceTest.whenGetAccountNoDataShouldThrowExceptionTest" />
+        <item itemvalue="JUnit.ExchangeAppApplicationTests" />
+        <item itemvalue="JUnit.ExchangeAppApplicationSpec.should load the context" />
+        <item itemvalue="JUnit.ExchangeAppApplicationSpec" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -110,7 +192,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730576455780</updated>
-      <workItem from="1730576458979" duration="43040000" />
+      <workItem from="1730576458979" duration="53432000" />
     </task>
     <servers />
   </component>
@@ -155,6 +237,26 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/GetCourse.java</url>
           <line>30</line>
           <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/exchange_app/ExchangeAppApplicationSpec.groovy</url>
+          <line>5</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountHandler.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/commons/CurrencyPairValidator.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -13,7 +13,7 @@ public class CurrencyPairValidator {
     }
 
     public static void validateIfInitValueIsPositive(Double value) {
-        if (validateIfPositiveValue(value)) {
+        if (validateIfNegativeValue(value)) {
             throwNotEnoughMoneyForInitException();
         }
     }
@@ -25,15 +25,15 @@ public class CurrencyPairValidator {
     }
 
     public static void validateIfAccountBalanceAllowsOperation(UUID id, Pair<Double, Double> balance) {
-        if (validateIfPositiveValue(balance.getFirst())) {
+        if (validateIfNegativeValue(balance.getFirst())) {
             throwNotEnoughMoneyForPlnExchangeException(id);
         }
-        if (validateIfPositiveValue(balance.getSecond())) {
+        if (validateIfNegativeValue(balance.getSecond())) {
             throwNotEnoughMoneyForUsdExchangeException(id);
         }
     }
 
-    private static boolean validateIfPositiveValue(Double value) {
-        return value >= 0;
+    private static boolean validateIfNegativeValue(Double value) {
+        return value < 0;
     }
 }

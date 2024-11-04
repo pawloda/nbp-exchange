@@ -11,15 +11,15 @@ public class ExceptionFactory {
         throw new AccountNotFoundException("The account with ID " + id + " not found!");
     }
 
-    public static AccountNotFoundException throwNotEnoughMoneyForInitException() {
+    public static void throwNotEnoughMoneyForInitException() {
         throw new NotEnoughMoneyException("You cannot set negative values for the account init balance!");
     }
 
-    public static AccountNotFoundException throwNotEnoughMoneyForPlnExchangeException(UUID id) {
+    public static void throwNotEnoughMoneyForPlnExchangeException(UUID id) {
         throw new NotEnoughMoneyException("The account with ID " + id + " has not enough PLNs!");
     }
 
-    public static AccountNotFoundException throwNotEnoughMoneyForUsdExchangeException(UUID id) {
+    public static void throwNotEnoughMoneyForUsdExchangeException(UUID id) {
         throw new NotEnoughMoneyException("The account with ID " + id + " has not enough USDs!");
     }
 }
