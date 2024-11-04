@@ -42,7 +42,7 @@ public class ExchangeServiceTest {
     ExchangeService service;
 
     @Test
-    void whenExchangeAndNoRepoResponseShouldThrowExceptionTest() {
+    void whenExchangeAndNoRepoResponse_ShouldThrowExceptionTest() {
         //when
         assertThatExceptionOfType(AccountNotFoundException.class)
                 .isThrownBy(() -> service.exchange(ACCOUNT_ID, Currency.USD, SUM))
@@ -54,7 +54,7 @@ public class ExchangeServiceTest {
 
     @ParameterizedTest
     @EnumSource(value = Currency.class)
-    void whenExchangeAndNotEnoughBalanceShouldThrowExceptionTest(Currency value) throws JsonProcessingException {
+    void whenExchangeAndNotEnoughBalance_ShouldThrowExceptionTest(Currency value) throws JsonProcessingException {
         //give
         given(repository.findPlnAndUsdById(any(UUID.class))).willReturn(Pair.of(9.99d, 9.99d));
         if (value == Currency.PLN) given(getCourse.forPLNExchange()).willReturn(1 / PLN_RESULT);
@@ -79,7 +79,7 @@ public class ExchangeServiceTest {
 
     @ParameterizedTest
     @MethodSource("provideCurrenciesAndResults")
-    void whenExchangeShouldInvokeRepoWithProperValuesTest(Currency value, Double course, Double plnResult,
+    void whenExchange_ShouldInvokeRepoWithProperValuesTest(Currency value, Double course, Double plnResult,
                                                           Double usdResult) throws JsonProcessingException {
         //give
         given(repository.findPlnAndUsdById(any(UUID.class))).willReturn(Pair.of(9999.99d, 9999.99d));

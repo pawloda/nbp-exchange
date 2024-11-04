@@ -5,15 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3d370772-d2db-4298-b242-6097784f458a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/it/java/com/exchange_app/accounts/AccountIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/java/com/exchange_app/exchanges/ExchangeIT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/exchange_app/exchanges/ExchangeServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/nbp-exchange.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/nbp-exchange.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/java/com/exchange_app/accounts/BasicIT.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/exchange_app/ExchangeAppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/exchange_app/ExchangeAppApplicationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/java/com/exchange_app/accounts/AccountIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/java/com/exchange_app/accounts/AccountIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/java/com/exchange_app/exchanges/ExchangeIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/java/com/exchange_app/exchanges/ExchangeIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/exchange_app/accounts/AccountServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/exchange_app/accounts/AccountServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/exchange_app/exchanges/ExchangeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/exchange_app/exchanges/ExchangeServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/exchange_app/exchanges/GetCourseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/exchange_app/exchanges/GetCourseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,9 +75,9 @@
       <recent name="C:\Users\Damian\Desktop\nbp-exchange\src\it\java" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.exchange_app.accounts" />
       <recent name="com.exchange_app" />
       <recent name="" />
-      <recent name="com.exchange_app.accounts" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.exchange_app.exchanges" />
@@ -96,10 +94,11 @@
       <command value="mvn compile" />
       <command value="mvn verify" />
       <command value="mvn clean test" />
+      <command value="mvn in" />
       <command value="mvn clean install" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.AccountIT">
+  <component name="RunManager" selected="JUnit.ExchangeIT.createAccountAndGetAfterExchange_ShouldReturnAccount">
     <configuration name="AccountIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="nbp-exchange" />
       <extension name="coverage">
@@ -115,7 +114,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AccountIT.createAccount_ShouldReturnCreatedAccountId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="nbp-exchange" />
       <extension name="coverage">
         <pattern>
@@ -124,8 +123,9 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.exchange_app.accounts" />
-      <option name="MAIN_CLASS_NAME" value="com.exchange_app.accounts.AccountServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="com.exchange_app.accounts.AccountIT" />
+      <option name="METHOD_NAME" value="createAccount_ShouldReturnCreatedAccountId" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -139,7 +139,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExchangeIT" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ExchangeIT.createAccountAndGetAfterExchange_ShouldReturnAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="nbp-exchange" />
       <extension name="coverage">
         <pattern>
@@ -149,7 +149,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.exchange_app.exchanges" />
       <option name="MAIN_CLASS_NAME" value="com.exchange_app.exchanges.ExchangeIT" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="createAccountAndGetAfterExchange_ShouldReturnAccount" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -178,11 +179,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ExchangeIT.createAccountAndGetAfterExchange_ShouldReturnAccount" />
         <item itemvalue="JUnit.AccountIT" />
+        <item itemvalue="JUnit.AccountIT.createAccount_ShouldReturnCreatedAccountId" />
         <item itemvalue="JUnit.ExchangeAppApplicationTest" />
         <item itemvalue="JUnit.ExchangeServiceTest" />
-        <item itemvalue="JUnit.ExchangeIT" />
-        <item itemvalue="JUnit.AccountServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -194,7 +195,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1730576455780</updated>
-      <workItem from="1730576458979" duration="67274000" />
+      <workItem from="1730576458979" duration="73966000" />
     </task>
     <servers />
   </component>
@@ -226,34 +227,9 @@
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeRepositoryImpl.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/GetCourse.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/exchange_app/ExchangeAppApplicationSpec.groovy</url>
           <line>5</line>
           <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountHandler.java</url>
-          <line>23</line>
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountService.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/commons/CurrencyPairValidator.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeService.java</url>
@@ -262,13 +238,28 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountController.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountController.java</url>
           <line>31</line>
           <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/it/java/com/exchange_app/accounts/AccountIT.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/accounts/AccountHandler.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/exchange_app/exchanges/ExchangeController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/it/java/com/exchange_app/exchanges/ExchangeIT.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="79" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

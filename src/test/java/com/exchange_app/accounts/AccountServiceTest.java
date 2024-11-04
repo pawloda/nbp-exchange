@@ -45,7 +45,7 @@ public class AccountServiceTest {
     AccountService service;
 
     @Test
-    void whenCreateAccountNegativeDataShouldThrowExceptionTest() {
+    void whenCreateAccountNegativeData_ShouldThrowExceptionTest() {
         //given
         ACCOUNT.setPln(-999.99d);
 
@@ -59,7 +59,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    void whenCreateAccountDataShouldReturnUUIDTest() {
+    void whenCreateAccountData_ShouldReturnUUIDTest() {
         //given:
         given(repository.save(any(AccountEntity.class))).willReturn(MAPPER.accountToEntity(ACCOUNT));
 
@@ -72,7 +72,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    void whenGetAccountNoDataShouldThrowExceptionTest() {
+    void whenGetAccountNoData_ShouldThrowExceptionTest() {
         //given:
         given(repository.findById(any(UUID.class))).willReturn(Optional.empty());
 
@@ -86,7 +86,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    void whenGetAccountShouldReturnEntityTest() {
+    void whenGetAccount_ShouldReturnEntityTest() {
         //given:
         var entity = new AccountEntity();
         entity.setId(ACCOUNT_ID);

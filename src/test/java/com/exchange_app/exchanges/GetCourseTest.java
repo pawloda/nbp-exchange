@@ -38,7 +38,7 @@ public class GetCourseTest {
 
     @ParameterizedTest
     @ValueSource(strings = { PLN, USD })
-    void whenForPlnExchangeThereIsNoNbpResponseShouldThrowExceptionTest(String currency) {
+    void whenForPlnExchangeThereIsNoNbpResponse_ShouldThrowExceptionTest(String currency) {
         //given
         given(template.getForObject(anyString(), any())).willReturn(NBP_INVALID_RESPONSE);
         
@@ -60,7 +60,7 @@ public class GetCourseTest {
 
     @ParameterizedTest
     @MethodSource("provideCurrenciesAndResults")
-    void whenForPlnExchangeThereIsNbpResponseShouldReturnCourseTest(String currency, Double expected)
+    void whenForPlnExchangeThereIsNbpResponse_ShouldReturnCourseTest(String currency, Double expected)
             throws JsonProcessingException {
         //given
         given(template.getForObject(anyString(), any())).willReturn(NBP_RESPONSE);
