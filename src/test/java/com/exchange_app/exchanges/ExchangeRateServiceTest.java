@@ -10,6 +10,9 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.mockito.ArgumentMatchers.any;
@@ -19,9 +22,11 @@ import static org.mockito.BDDMockito.then;
 import static org.mockito.Mockito.times;
 
 @ExtendWith(MockitoExtension.class)
-public class GetCourseTest {
-    private static final Double PLN_RESULT = 4.0425d;
-    private static final Double USD_RESULT = 3.9625d;
+public class ExchangeRateServiceTest {
+    private static final BigDecimal PLN_RESULT = BigDecimal.valueOf(4.0425d);
+    private static final BigDecimal USD_RESULT = BigDecimal.valueOf(3.9625d);
+    private static final Integer ONE = 1;
+    private static final Integer SCALE = 10;
     private static final String PLN = "PLN";
     private static final String USD = "USD";
     private static final String NBP_INVALID_RESPONSE = "INVALID";
@@ -34,7 +39,7 @@ public class GetCourseTest {
     RestTemplate template;
 
     @InjectMocks
-    GetCourse getCourse;
+    ExchangeRateService getCourse;
 
     @ParameterizedTest
     @ValueSource(strings = { PLN, USD })
@@ -48,19 +53,19 @@ public class GetCourseTest {
         );
 
         //then:
-        then(template).should(times(1)).getForObject(anyString(), any());
+        then(template).should(times(ONE)).getForObject(anyString(), any());
     }
 
     private static Object[][] provideCurrenciesAndResults() {
         return new Object[][] {
-                { PLN, 1 / PLN_RESULT },
+                { PLN, BigDecimal.ONE.divide(PLN_RESULT, SCALE, RoundingMode.HALF_UP) },
                 { USD, USD_RESULT }
         };
     }
 
     @ParameterizedTest
     @MethodSource("provideCurrenciesAndResults")
-    void whenForPlnExchangeThereIsNbpResponse_ShouldReturnCourseTest(String currency, Double expected)
+    void whenForPlnExchangeThereIsNbpResponse_ShouldReturnCourseTest(String currency, BigDecimal expected)
             throws JsonProcessingException {
         //given
         given(template.getForObject(anyString(), any())).willReturn(NBP_RESPONSE);
@@ -69,7 +74,7 @@ public class GetCourseTest {
         var result = PLN.equals(currency) ? getCourse.forPLNExchange() : getCourse.forUSDExchange();
 
         //then:
-        then(template).should(times(1)).getForObject(anyString(), any());
+        then(template).should(times(ONE)).getForObject(anyString(), any());
         assertThat(result).isEqualTo(expected);
     }
 }

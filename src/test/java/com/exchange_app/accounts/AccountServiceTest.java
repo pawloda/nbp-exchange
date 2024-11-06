@@ -9,6 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -26,8 +27,8 @@ public class AccountServiceTest {
     private static final Account ACCOUNT = new Account();
     private static final String FIRST_NAME = "John";
     private static final String SECOND_NAME = "Doe";
-    private static final Double PLN = 999.99d;
-    private static final Double USD = 999.99d;
+    private static final BigDecimal PLN = BigDecimal.valueOf(999.99d);
+    private static final BigDecimal USD = BigDecimal.valueOf(999.99d);
 
     @BeforeEach
     void setAccount() {
@@ -42,12 +43,12 @@ public class AccountServiceTest {
     AccountRepository repository;
 
     @InjectMocks
-    AccountService service;
+    AccountServiceImpl service;
 
     @Test
     void whenCreateAccountNegativeData_ShouldThrowExceptionTest() {
         //given
-        ACCOUNT.setPln(-999.99d);
+        ACCOUNT.setPln(BigDecimal.valueOf(-999.99d));
 
         //when
         assertThatExceptionOfType(NotEnoughMoneyException.class)

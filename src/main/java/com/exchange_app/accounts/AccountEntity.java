@@ -1,12 +1,10 @@
 package com.exchange_app.accounts;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Getter
@@ -16,8 +14,16 @@ class AccountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
+    @Column(nullable = false)
     private String firstName;
+
+    @Column(nullable = false)
     private String secondName;
-    private Double pln;
-    private Double usd;
+
+    @Column(nullable = false)
+    private BigDecimal pln;
+
+    @Column(nullable = false)
+    private BigDecimal usd;
 }

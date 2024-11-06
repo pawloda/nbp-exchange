@@ -1,39 +1,26 @@
 package com.exchange_app.commons;
 
+import com.exchange_app.exceptions.NotEnoughMoneyException;
 import org.springframework.data.util.Pair;
 
+import java.math.BigDecimal;
 import java.util.UUID;
-
-import static com.exchange_app.exceptions.ExceptionFactory.*;
-import static java.util.Objects.isNull;
 
 public class CurrencyPairValidator {
     private CurrencyPairValidator() {
         //For util class
     }
 
-    public static void validateIfInitValueIsPositive(Double value) {
-        if (validateIfNegativeValue(value)) {
-            throwNotEnoughMoneyForInitException();
-        }
-    }
-
-    public static void validateIfAccountBalanceExists(UUID id, Pair<Double, Double> balance) {
-        if(isNull(balance)) {
-            throwAccountNotFoundException(id);
-        }
-    }
-
-    public static void validateIfAccountBalanceAllowsOperation(UUID id, Pair<Double, Double> balance) {
+    public static void validateIfAccountBalanceAllowsOperation(UUID id, Pair<BigDecimal, BigDecimal> balance) {
         if (validateIfNegativeValue(balance.getFirst())) {
-            throwNotEnoughMoneyForPlnExchangeException(id);
+            throw new NotEnoughMoneyException("The account with ID " + id + " has not enough PLNs!");
         }
         if (validateIfNegativeValue(balance.getSecond())) {
-            throwNotEnoughMoneyForUsdExchangeException(id);
+            throw new NotEnoughMoneyException("The account with ID " + id + " has not enough USDs!");
         }
     }
 
-    private static boolean validateIfNegativeValue(Double value) {
-        return value < 0;
+    public static boolean validateIfNegativeValue(BigDecimal value) {
+        return value.compareTo(BigDecimal.ZERO) < 0;
     }
 }

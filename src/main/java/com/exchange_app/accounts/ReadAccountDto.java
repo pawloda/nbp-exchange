@@ -4,6 +4,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Schema(description = "Read account dto")
 @Getter
 @Setter
@@ -15,8 +17,8 @@ class ReadAccountDto {
     private String secondName;
 
     @Schema(example = "999.99")
-    private Double pln;
+    private BigDecimal pln;
 
     @Schema(example = "999.99")
-    private Double usd;
+    private BigDecimal usd;
 }

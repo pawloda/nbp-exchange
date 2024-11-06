@@ -12,9 +12,9 @@ import static com.exchange_app.accounts.AccountMapper.MAPPER;
 class AccountHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(AccountHandler.class);
 
-    private final AccountService service;
+    private final AccountServiceImpl service;
 
-    AccountHandler(final AccountService service) {
+    AccountHandler(final AccountServiceImpl service) {
         this.service = service;
     }
 

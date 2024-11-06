@@ -14,6 +14,9 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.util.Pair;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -28,18 +31,19 @@ import static org.mockito.Mockito.times;
 @ExtendWith(MockitoExtension.class)
 public class ExchangeServiceTest {
     private static final UUID ACCOUNT_ID = UUID.randomUUID();
-    private static final Double PLN_RESULT = 4.0425d;
-    private static final Double USD_RESULT = 3.9625d;
-    private static final Double SUM = 99.99d;
+    private static final BigDecimal PLN_RESULT = BigDecimal.valueOf(4.0425d);
+    private static final BigDecimal USD_RESULT = BigDecimal.valueOf(3.9625d);
+    private static final BigDecimal SUM = BigDecimal.valueOf(99.99d);
+    private static final Integer SCALE = 10;
 
     @Mock
-    GetCourse getCourse;
+    ExchangeRateService exchangeRateService;
 
     @Mock
     ExchangeRepository repository;
 
     @InjectMocks
-    ExchangeService service;
+    ExchangeServiceImpl service;
 
     @Test
     void whenExchangeAndNoRepoResponse_ShouldThrowExceptionTest() {
@@ -56,9 +60,11 @@ public class ExchangeServiceTest {
     @EnumSource(value = Currency.class)
     void whenExchangeAndNotEnoughBalance_ShouldThrowExceptionTest(Currency value) throws JsonProcessingException {
         //give
-        given(repository.findPlnAndUsdById(any(UUID.class))).willReturn(Pair.of(9.99d, 9.99d));
-        if (value == Currency.PLN) given(getCourse.forPLNExchange()).willReturn(1 / PLN_RESULT);
-        if (value == Currency.USD) given(getCourse.forUSDExchange()).willReturn(USD_RESULT);
+        given(repository.findPlnAndUsdById(any(UUID.class)))
+                .willReturn(Optional.of(Pair.of(BigDecimal.valueOf(9.99d), BigDecimal.valueOf(9.99d))));
+        if (value == Currency.PLN) given(exchangeRateService.forPLNExchange())
+                .willReturn(BigDecimal.ONE.divide(PLN_RESULT, SCALE, RoundingMode.HALF_UP));
+        if (value == Currency.USD) given(exchangeRateService.forUSDExchange()).willReturn(USD_RESULT);
         String currency = value == Currency.PLN ? "PLN" : "USD";
 
         //when
@@ -72,21 +78,23 @@ public class ExchangeServiceTest {
 
     private static Object[][] provideCurrenciesAndResults() {
         return new Object[][] {
-                { Currency.PLN, 1 / PLN_RESULT, 9900.0d, 10024.724693877552d },
-                { Currency.USD, USD_RESULT, 10396.200375d, 9900.0d }
+                { Currency.PLN, BigDecimal.ONE.divide(PLN_RESULT, SCALE, RoundingMode.HALF_UP),
+                        BigDecimal.valueOf(9900.0d), BigDecimal.valueOf(10024.724693877552d) },
+                { Currency.USD, USD_RESULT, BigDecimal.valueOf(10396.200375d), BigDecimal.valueOf(9900.0d) }
         };
     }
 
     @ParameterizedTest
     @MethodSource("provideCurrenciesAndResults")
-    void whenExchange_ShouldInvokeRepoWithProperValuesTest(Currency value, Double course, Double plnResult,
-                                                          Double usdResult) throws JsonProcessingException {
+    void whenExchange_ShouldInvokeRepoWithProperValuesTest(Currency value, BigDecimal course, BigDecimal plnResult,
+                                                           BigDecimal usdResult) throws JsonProcessingException {
         //give
-        given(repository.findPlnAndUsdById(any(UUID.class))).willReturn(Pair.of(9999.99d, 9999.99d));
-        if (value == Currency.PLN) given(getCourse.forPLNExchange()).willReturn(course);
-        if (value == Currency.USD) given(getCourse.forUSDExchange()).willReturn(course);
-        var plnCaptor = forClass(Double.class);
-        var usdCaptor = forClass(Double.class);
+        given(repository.findPlnAndUsdById(any(UUID.class)))
+                .willReturn(Optional.of(Pair.of(BigDecimal.valueOf(9999.99d), BigDecimal.valueOf(9999.99d))));
+        if (value == Currency.PLN) given(exchangeRateService.forPLNExchange()).willReturn(course);
+        if (value == Currency.USD) given(exchangeRateService.forUSDExchange()).willReturn(course);
+        var plnCaptor = forClass(BigDecimal.class);
+        var usdCaptor = forClass(BigDecimal.class);
 
         //when
         service.exchange(ACCOUNT_ID, value, SUM);
@@ -94,7 +102,7 @@ public class ExchangeServiceTest {
         //then:
         then(repository).should(times(1))
                 .updateBalance(eq(ACCOUNT_ID), plnCaptor.capture(), usdCaptor.capture());
-        assertThat(plnCaptor.getValue()).isCloseTo(plnResult, Offset.offset(0.01d));
-        assertThat(usdCaptor.getValue()).isCloseTo(usdResult, Offset.offset(0.01d));
+        assertThat(plnCaptor.getValue().doubleValue()).isCloseTo(plnResult.doubleValue(), Offset.offset(0.01d));
+        assertThat(usdCaptor.getValue().doubleValue()).isCloseTo(usdResult.doubleValue(), Offset.offset(0.01d));
     }
 }

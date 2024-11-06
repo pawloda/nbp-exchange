@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -19,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public abstract class BasicIT {
     protected static final String FIRST_NAME = "John";
     protected static final String SECOND_NAME = "Doe";
-    protected static final Double PLN = 999.99d;
+    protected static final BigDecimal PLN = BigDecimal.valueOf(999.99d);
 
     protected UUID id;
 
