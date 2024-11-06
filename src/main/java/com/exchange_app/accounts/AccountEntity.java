@@ -10,20 +10,23 @@ import java.util.UUID;
 @Getter
 @Setter
 @Entity(name = "Account")
-class AccountEntity {
+@Table(name = "accounts")
+public class AccountEntity {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
 
-    @Column(nullable = false)
+    @Column(name = "first_name", nullable = false, length = 50)
     private String firstName;
 
-    @Column(nullable = false)
+    @Column(name = "second_name", nullable = false, length = 50)
     private String secondName;
 
-    @Column(nullable = false)
+    @Column(name = "pln", nullable = false, precision = 15, scale = 2)
     private BigDecimal pln;
 
-    @Column(nullable = false)
+    @Column(name = "usd", nullable = false, precision = 15, scale = 2)
     private BigDecimal usd;
 }

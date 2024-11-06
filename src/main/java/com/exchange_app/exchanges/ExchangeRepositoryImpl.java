@@ -1,5 +1,6 @@
 package com.exchange_app.exchanges;
 
+import jakarta.validation.constraints.NotNull;
 import org.springframework.data.util.Pair;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -22,10 +23,10 @@ class ExchangeRepositoryImpl implements ExchangeRepository {
     }
 
     @Override
-    public Optional<Pair<BigDecimal, BigDecimal>> findPlnAndUsdById(UUID id) {
+    public Optional<Pair<BigDecimal, BigDecimal>> findPlnAndUsdById(@NotNull(message = "Id cannot be null") UUID id) {
         try {
             return Optional.ofNullable(jdbcTemplate.queryForObject(
-                    "SELECT pln, usd FROM Account WHERE id = :id",
+                    "SELECT pln, usd FROM accounts WHERE id = :id",
                     new MapSqlParameterSource(ACCOUNT_ID, id),
                     (rs, rowNum) -> Pair.of(rs.getBigDecimal(PLN), rs.getBigDecimal(USD)))
             );
@@ -37,7 +38,7 @@ class ExchangeRepositoryImpl implements ExchangeRepository {
     @Override
     public void updateBalance(UUID id, BigDecimal pln, BigDecimal usd) {
         jdbcTemplate.update(
-                "UPDATE Account SET pln = :pln, usd = :usd WHERE id = :id",
+                "UPDATE accounts SET pln = :pln, usd = :usd WHERE id = :id",
                 new MapSqlParameterSource()
                         .addValue(PLN, pln)
                         .addValue(USD, usd)

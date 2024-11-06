@@ -34,18 +34,10 @@ public abstract class BasicIT {
     public void sendPostAndInitId() throws Exception {
         var response = mockMvc.perform(post("/api/account")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(createAccount())))
+                        .content(objectMapper.writeValueAsString(new CreateAccountDto(FIRST_NAME, SECOND_NAME, PLN))))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$").exists());
         var idResponse = response.andReturn().getResponse().getContentAsString();
         id = UUID.fromString(idResponse.substring(1, idResponse.length() - 1));
-    }
-
-    private CreateAccountDto createAccount() {
-        CreateAccountDto dto = new CreateAccountDto();
-        dto.setFirstName(FIRST_NAME);
-        dto.setSecondName(SECOND_NAME);
-        dto.setPln(PLN);
-        return dto;
     }
 }

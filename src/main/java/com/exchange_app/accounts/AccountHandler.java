@@ -19,7 +19,7 @@ class AccountHandler {
     }
 
     UUID createAccount(CreateAccountDto dto) {
-        LOGGER.info("Create account request has been received for: {} {}", dto.getFirstName(), dto.getSecondName());
+        LOGGER.info("Create account request has been received for: {} {}", dto.firstName(), dto.secondName());
         var account = MAPPER.createDtoToAccount(dto);
         return service.createAccount(account);
     }

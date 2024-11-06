@@ -2,22 +2,27 @@ package com.exchange_app.exchanges;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+import static java.util.Objects.isNull;
+
 @Service
 public class ExchangeRateService {
     private static final Integer ONE = 1;
     private static final Integer SCALE = 10;
-    private static final String NBP_URL = "https://api.nbp.pl/api/exchangerates/rates/c/usd/last/10/?format=json";
     private static final String OPERATION_ASK = "ask";
     private static final String OPERATION_BID = "bid";
     private static final String RATES = "rates";
 
     private final RestTemplate template;
+
+    @Value("${exchange.api.url}")
+    private String nbpUrl;
 
     ExchangeRateService(final RestTemplate template) {
         this.template = template;
@@ -40,6 +45,6 @@ public class ExchangeRateService {
     }
 
     private String sendGetRequest() {
-        return template.getForObject(NBP_URL, String.class);
+        return template.getForObject(isNull(nbpUrl) ? "" : nbpUrl, String.class);
     }
 }
